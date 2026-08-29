@@ -1,0 +1,45 @@
+[project]
+name = "fruity-fun"
+version = "0.1.0"
+description = "Kid-friendly fruit chatbot with hybrid PDF retrieval and image generation"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "langchain-core>=0.3,<2",
+  "langchain-openai>=0.3,<2",
+  "langgraph>=0.4,<2",
+  "openai>=1.80,<3",
+  "pinecone>=7,<9",
+  "pydantic-settings>=2.9,<3",
+  "pymupdf>=1.25,<2",
+  "rank-bm25>=0.2.2,<1",
+  "streamlit>=1.45,<2",
+  "tenacity>=9,<10",
+  "watchdog>=6,<7",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3,<10",
+  "pytest-cov>=6,<8",
+  "ruff>=0.11,<1",
+]
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = [".venv", ".uv-cache", ".uv-python"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]

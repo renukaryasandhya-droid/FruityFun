@@ -1,0 +1,17 @@
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.coverage
+*.egg-info/
+.uv-cache/
+.uv-python/
+*.py[cod]
+data/pdfs/*.pdf
+data/processed/*.json
+outputs/generated/*
+tmp/
+!data/pdfs/.gitkeep
+!data/processed/.gitkeep
+!outputs/generated/.gitkeep
